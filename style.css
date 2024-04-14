@@ -1,0 +1,677 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, 
+html{
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  -webkit-user-select: none;
+  user-select: none;
+  background-color: black;
+  scroll-behavior: smooth;
+}
+
+nav{
+  color: white;
+  z-index: 1;
+  position: relative;
+  padding: 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: large;
+  width: 150px;
+  padding: 5px;
+}
+
+nav h3{
+  font-weight: bold;
+  font-size: larger;
+}
+
+nav ul{
+  list-style: none;
+  display: flex;
+  font-weight: 500;
+  font-size: large;
+  gap: 4rem;
+  margin-top: 10px;
+}
+
+nav ul li{
+  width: 150px;
+  text-align: end;
+}
+
+nav ul li:before{
+  content: "@";
+  font-weight: 900;
+  color: orangered;
+}
+
+nav ul li a:hover{
+  color: white;
+  font-weight: bold;
+  animation: flicker 2s ease-in-out infinite alternate;
+  letter-spacing: 0.1em;
+  transition: letter-spacing 0.5s;
+}
+
+.title{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 2em;
+  color: white;
+  z-index: 2;
+  position: absolute;
+  font-size: 2.5rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title h1{
+  color: #fff;
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke: 3px white;
+}
+
+.cta{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cta button{
+  color: white;
+  background-color: black;
+  font-weight: bolder;
+  font-size: large;
+  border-radius: 50px;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.b1{
+  padding-left: 1em 3em 1em 0em;
+}
+
+.b2{
+  padding-left: 1em 0em 1em 3em;
+}
+
+.cta button a{
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+h6{
+  z-index: 2;
+  color: orangered;
+  text-align: right;
+}
+
+.flickr:hover{
+  color: white;
+  animation: flicker 2s ease-in-out infinite alternate;
+}
+
+.flickr_blue:hover{
+  color: white;
+  animation: flicker_blue 2s ease-in-out infinite alternate;
+}
+
+.circle{
+  height: 16px;
+  width: 16px;
+  border-radius: 24px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999; /* so that it stays on top of all other elements */
+}
+
+.ornge{
+  color: orangered;
+}
+
+.nogo:before{
+  content: "BV";
+  color: white;
+  animation: old-text 0.5s linear forwards;
+}
+
+.logo:before{
+  content: "BHARGAV";
+  color: white;
+  animation: new-text 0.5s linear forwards;
+}
+
+.initial{
+  color: orangered;
+  font-weight: bolder;
+}
+
+.undrln{
+  position: absolute;
+  height: 2px;
+  margin-top: 1.5em;
+}
+
+.undrln-sm{
+  width: 26px;
+  background: white;
+  transition: width 0.5s linear;
+}
+
+.undrln-lg{
+  width: 115px;
+  background: orangered;
+  transition: width 0.5s linear;
+}
+
+.preloader {
+  /* Center the preloader */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #121212; /* Optional: Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure the preloader is on top of other elements */
+}
+
+.preloader:before {
+  content: "";
+  display: block;
+  /* Size and border of the spinner */
+  width: 60px;
+  height: 60px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  border-top-color: #3498db; /* Blue color for the spinning part */
+  animation: spin 1s linear infinite;
+}
+
+#app{
+  width: 100vw;
+  height: 100vh;
+}
+
+.aboutme{
+  color: white;
+  background: black;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.about_me_h1{
+  text-align: center;
+  padding: 1em;
+  text-decoration: underline;
+  text-decoration-color: orangered;
+}
+
+.about_me_desc{
+  padding: 2em;
+  padding-left: 10em;
+  padding-right: 10em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.about_me_p{
+  padding: 3.5em 1em 1em 1em;
+}
+
+.skills_h2{
+  text-align: center;
+  padding: 1em;
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+.picdiv{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  object-fit: cover;
+}
+
+.about_me_img{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+
+}
+
+#projects{
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(black, #121212);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects_h1{
+  width: 20%;
+  text-align: center;
+  padding: 2em;
+}
+
+.project_div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 30px 30px 0;
+  border: 1px solid bisque;
+  height: 80%;
+  width: 80%;
+  margin-left: -2px;
+  background: #121212;
+  box-shadow: inset -20px 20px 120px #080808,
+            inset 20px -20px 120px #0b0b0b;
+}
+
+#connect{
+  height: 100vh;
+  width: 100vw;
+  background-color: #121212;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.connect_h1{
+  width: 20%;
+  padding: 2em;
+}
+
+.hidden_a{
+  display: none;
+}
+
+.form_div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px 0px 0px 30px;
+  border: 1px solid bisque;
+  height: 80%;
+  width: 80%;
+  background: #121212;
+  box-shadow: inset -20px 20px 120px #080808,
+            inset 20px -20px 120px #0b0b0b;
+}
+
+.form_div:after, .project_div:after{
+  content: "";
+  margin-top: -17px;
+  font-size: 3em;
+  animation: wip 4s linear infinite;
+}
+
+.sk_wrap{
+  display: flex;
+  justify-content: center;
+}
+
+.scroller{
+  max-width: 50vw;
+}
+
+.scroller[data-animated=true]{
+  overflow: hidden; 
+  -webkit-mask: linear-gradient(90deg, 
+                                transparent,
+                              white 20%, 
+                              white 80%, 
+                                transparent);
+  mask: linear-gradient(90deg, 
+                        transparent,
+                      white 20%, 
+                      white 80%, 
+                        transparent);
+}
+
+.scroller[data-animated=true] .scroller_inner{
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+}
+
+.scroller[data-direction="right"]{
+  --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"]{
+  --_animation-direction: forwards;
+}
+
+.scroller[data-speed="fast"]{
+  --_animation-duration: 20s;
+}
+
+.scroller[data-speed="slow"]{
+  --_animation-duration: 40s;
+}
+
+.scroller_inner{
+  padding-block: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+footer{
+  color: antiquewhite;
+  text-align: center;
+  padding: 1em;
+  padding-top: 4em;
+  background-color: #121212;
+}
+
+@keyframes wip{
+  0%{
+    content: "";
+  }
+
+  10%{
+    content: ".";
+  }
+
+  20%{
+    content: "..";
+  }
+
+  30%{
+    content: "...";
+  }
+
+  40%{
+    content: "....";
+  }
+
+  50%{
+    content: ".....";
+  }
+
+  60%{
+    content: "....";
+  }
+
+  70%{
+    content: "...";
+  }
+
+  80%{
+    content: "..";
+  }
+
+  90%{
+    content: ".";
+  }
+
+  100%{
+    content: "";
+  }
+}
+
+@keyframes flicker_blue {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow:
+    0 0 1px #fff,
+    0 0 3px #fff,
+    0 0 7px #fff,
+    0 0 15px skyblue,
+    0 0 30px blue,
+    0 0 60px blue,
+    0 0 120px blue,
+    0 0 240px blue;
+  }
+  20%, 24%, 55% {       
+    text-shadow: none;
+  }
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow:
+    0 0 1px #fff,
+    0 0 2px #fff,
+    0 0 3px #fff,
+    0 0 7px orange,
+    0 0 15px orangered,
+    0 0 30px orangered,
+    0 0 60px orangered,
+    0 0 120px orangered;
+  }
+  20%, 24%, 55% {       
+    text-shadow: none;
+  }
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 1rem));
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes text-space {
+  0% {
+    letter-spacing: 0em;
+  }
+  100% {
+    letter-spacing: 0.1em;
+  }
+}
+
+@keyframes new-text {
+  0% {
+    content: "BH";
+  }
+  20% {
+    content: "BHA";
+  }
+  40% {
+    content: "BHAR";
+  }
+  60% {
+    content: "BHARG";
+  }
+  80% {
+    content: "BHARGA";
+  }
+  100% {
+    content: "BHARGAV ";
+  }
+}
+
+@keyframes old-text {
+  10% {
+    content: "BHARGAV";
+  }
+  20% {
+    content: "BHARGA";
+  }
+  40% {
+    content: "BHARG";
+  }
+  50% {
+    content: "BHAR";
+  }
+  70% {
+    content: "BHA";
+  }
+  90% {
+    content: "BH";
+  }
+  100% {
+    content: "B";
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .circle{
+    display: none;
+  }
+
+}
+
+@media only screen and (max-width: 1300px) {
+  nav{
+    padding: 2rem;
+  }
+
+  nav h3{
+    font-size: large;
+  }
+
+  nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .aboutme{
+    height: 150vh;
+  }
+
+  .about_me_desc{
+    flex-wrap: wrap;
+    padding: 1em;
+  }
+
+  .about_me_p{
+    margin-top: 1em;
+    padding: 2em;
+  }
+
+  .scroller{
+    max-width: 80vw;
+  }
+
+  #connect{
+    flex-direction: column;
+  }
+  
+  .connect_h1{
+    width: auto;
+    padding: 1em;
+  }
+
+  .form_div{
+    border-radius: 10px;
+  }
+
+  #projects{
+    flex-direction: column-reverse;
+  }
+  
+  .projects_h1{
+    text-align: left;
+    width: auto;
+    padding: 1em;
+  }
+
+  .project_div{
+    border-radius: 10px;
+    margin-left: 0;
+  }
+
+  .main_text{
+    font-size: smaller;
+  }
+
+  .cta button{
+    font-size: small;
+  }
+
+  .project_div h2, .form_div h2{
+    margin-top: 0;
+    font-size: small;
+  }
+
+  .project_div:after, .form_div:after{
+    margin-top: 0;
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  nav {
+    padding: 1em;
+  }
+
+  .title{
+    font-size: 1.5em;
+  }
+
+  nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .aboutme{
+    height: 180vh;
+  }
+
+  .about_me_desc{
+    flex-wrap: wrap;
+    padding: 1em;
+  }
+
+  .about_me_p{
+    margin-top: 1em;
+    padding: 1em;
+  }
+
+  .title{
+    top: 60%;
+  }
+
+  .main_text{
+    font-size: larger;
+  }
+
+  .cta button{
+    font-size: small;
+  }
+
+  footer{
+    font-size: small;
+  }
+}

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link href="./style.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div id="app">
+      <nav id="navi">
+        <h3 id="logo" class="nogo" onmouseover="mouseOver()" onmouseout="mouseOut()"><span class="initial">V</span></h3>
+        <div id="underline" class="undrln undrln-sm"></div>
+        <ul>
+          <li><a href="#aboutme">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#connect">Connect</a></li>
+        </ul>
+      </nav>
+      <div class="title">
+        <div class="main_text">
+          <h1><span class="flickr_blue">H</span><span class="flickr_blue">e</span><span class="flickr_blue">l</span><span class="flickr_blue">l</span><span class="flickr_blue">o</span><span class="flickr_blue">,</span></h1>
+          <h1><span class="flickr_blue">I</span> <span class="flickr_blue">a</span><span class="flickr_blue">m</span> 
+            <span class="flickr_blue">B</span><span class="flickr_blue">h</span><span class="flickr_blue">a</span><span class="flickr_blue">r</span><span class="flickr_blue">g</span><span class="flickr_blue">a</span><span class="flickr_blue">v</span>
+            <span class="flickr_blue">V</span></h1>
+          <h6 class="main-text"><span class=""><i class="flickr">&#8600; Web Developer</i></span></h6>
+        </div>
+        <div class="cta">
+          <a href="./document/imvbhargav_resume.pdf" download="BhargavVResume.pdf" aria-hidden="true" class="hidden_a" id="pdf_file"></a>
+          <button class="flickr_blue b1" onclick="downloadPdf()"><img src="./src/downloading.png" width="25" height="25"/> <strong> Resume</strong></button>
+          <button class="flickr_blue b2"><a href="#connect"><img src="./src/mobile.png" width="30" height="30"/> <strong> Contact</strong></a></button>
+        </div>
+      </div>
+    </div>
+    <div class="aboutme" id="aboutme">
+      <h1 class="about_me_h1"><span class="ornge">A</span>bout Me.</h1>
+      <div class="about_me_desc">
+        <div class="picdiv">
+          <img class="about_me_img" src="./src/pic.jpg"/>
+        </div>
+        <p class="about_me_p">
+          Hello, I'm Bhargav V, Since my age of 16, I have been learning and developing skills in Web Development, After completion of BSc in Computer
+          Science from Mangalore University, I have joined Mimsys Technologies Pvt. Ltd. on April 2023 as Junior Software Engineer.
+          With a strong foundation in HTML, CSS, and JavaScript and my passion in developing products for web that makes the 
+          world more accessable with ease, I have been learning and working in emerging tools of Web Development.
+        </p>
+      </div>
+      <h2 class="skills_h2 MagicScroll">S<span class="ornge">kills.</span></h2>
+      <div class="sk_wrap">
+        <div class="scroller" data-direction="left" data-speed="slow">
+          <div class="skills scroller_inner" id="skills">
+            <img class="skill_img" src="./src/p5.png" width="60" height="60"/>
+            <img class="skill_img" src="./src/p3.png" width="60" height="60"/>
+            <img class="skill_img" src="./src/p8.png" width="60" height="60"/>
+            <img class="skill_img" src="./src/rect.png" width="60" height="60"/>
+            <img class="skill_img" src="./src/p7.png" width="60" height="60"/>
+            <img class="skill_img" src="./src/next.png" width="60" height="60"/>
+            <img class="skill_img" src="./src/django.png" width="60" height="60"/>
+            <img class="skill_img" src="./src/p9.png" width="60" height="60"/>
+            <img class="skill_img" src="./src/p2.png" width="60" height="60"/>
+            <img class="skill_img" src="./src/p6.png" width="60" height="60"/>
+            <img class="skill_img" src="./src/p1.png" width="60" height="60"/>
+          </div>
+        </div>
+    </div>
+    </div>
+    <div id="projects">
+      <div class="project_div">
+        
+        <h2>WORK IN PROGRESS</h2>
+
+      </div>
+      <h1 class="projects_h1"><span class="ornge">P</span>rojects.</h1>
+    </div>
+
+    <div id="connect">
+      <h1 class="connect_h1"><span class="ornge">C</span>onnect <br> with <br> me.</h1>
+      <div class="form_div">
+        
+        <h2>WORK IN PROGRESS</h2>
+
+      </div>
+    </div>
+    <footer>
+      <h3>&copy; Copyright - 2024, Bhargav V.</h3>
+    </footer>
+    <script type="module" src="/main.js"></script>
+    <script>
+      function mouseOver() {
+        document.getElementById("logo").classList.remove("nogo");
+        document.getElementById("logo").classList.add("logo");
+
+        document.getElementById("underline").classList.remove("undrln-sm");
+        document.getElementById("underline").classList.add("undrln-lg");
+      }
+
+      function mouseOut() {
+        document.getElementById("logo").classList.remove("logo");
+        document.getElementById("logo").classList.add("nogo");
+
+        document.getElementById("underline").classList.remove("undrln-lg");
+        document.getElementById("underline").classList.add("undrln-sm");
+      }
+
+      const scrollers = document.querySelectorAll(".scroller");
+
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+        addAnimation();
+      }
+
+      function addAnimation(){
+        scrollers.forEach(scroller => {
+          scroller.setAttribute("data-animated", true)
+
+          const scrollerInner = scroller.querySelector('.scroller_inner')
+          const scrollerContent = Array.from(scrollerInner.children)
+
+          scrollerContent.forEach(item => {
+            const duplicatedItem = item.cloneNode(true);
+
+            duplicatedItem.setAttribute('aria-hidden', true)
+            scrollerInner.appendChild(duplicatedItem)
+          })
+        })
+      }
+
+      function downloadPdf(){
+        document.getElementById("pdf_file").click();
+      }
+    </script>
+  </body>
+</html>
