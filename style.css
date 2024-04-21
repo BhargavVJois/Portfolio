@@ -15,17 +15,20 @@ html{
 }
 
 nav{
-  color: white;
+  position: fixed;
+  width: 100vw;
+  color: antiquewhite;
   z-index: 1;
-  position: relative;
   padding: 4rem;
   display: flex;
   justify-content: space-between;
+  z-index: 100000000;
 }
 
 nav a{
+  position: relative;
   text-decoration: none;
-  color: white;
+  color: antiquewhite;
   font-weight: bold;
   font-size: large;
   width: 150px;
@@ -33,8 +36,68 @@ nav a{
 }
 
 nav h3{
+  padding-top: 10px;
   font-weight: bold;
   font-size: larger;
+}
+
+.aboutme_main{
+  padding: 5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.aboutme_edu, .aboutme_work{
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutme_work__h3, .aboutme_edu__h3{
+  color: orangered;
+}
+
+.aboutme_edu__h3, .aboutme_edu__desc h4, .aboutme_work__desc h4{
+  text-align: right;
+}
+
+.aboutme_edu__desc{
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 2em;
+  background: linear-gradient(90deg, rgba(255, 228, 196, 0.1) 0%, #000 100%);
+  border-radius: 10px;
+  border-left: 1px solid rgba(255, 169, 0, 0.2);
+}
+
+.aboutme_work__desc{
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 2em;
+  background: linear-gradient(270deg, rgba(255, 228, 196, 0.1) 0%, #000 100%);
+  border-radius: 10px;
+  border-right: 1px solid rgba(255, 169, 0, 0.2);
+}
+
+nav h3 span{
+  display: inline-block;
+  padding-right: 5px;
+  overflow: hidden;
+  transition: width 2s linear;
+}
+
+#home{
+  width: 95.15px;
 }
 
 nav ul{
@@ -58,11 +121,9 @@ nav ul li:before{
 }
 
 nav ul li a:hover{
-  color: white;
+  color: antiquewhite;
   font-weight: bold;
   animation: flicker 2s ease-in-out infinite alternate;
-  letter-spacing: 0.1em;
-  transition: letter-spacing 0.5s;
 }
 
 .title{
@@ -70,7 +131,7 @@ nav ul li a:hover{
   flex-direction: column;
   justify-content: start;
   gap: 2em;
-  color: white;
+  color: antiquewhite;
   z-index: 2;
   position: absolute;
   font-size: 2.5rem;
@@ -82,7 +143,7 @@ nav ul li a:hover{
 .title h1{
   color: #fff;
   -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
-  -webkit-text-stroke: 3px white;
+  -webkit-text-stroke: 3px antiquewhite;
 }
 
 .cta{
@@ -92,12 +153,13 @@ nav ul li a:hover{
 }
 
 .cta button{
-  color: white;
-  background-color: black;
+  color: antiquewhite;
+  background: linear-gradient(180deg, rgba(255, 228, 196, 0.1) 0%, black 100%);
+  background-size: 200%;
   font-weight: bolder;
   font-size: large;
-  border-radius: 50px;
   border: none;
+  padding: 0.5em 1em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -114,7 +176,7 @@ nav ul li a:hover{
 
 .cta button a{
   text-decoration: none;
-  color: white;
+  color: antiquewhite;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -127,41 +189,17 @@ h6{
 }
 
 .flickr:hover{
-  color: white;
+  color: antiquewhite;
   animation: flicker 2s ease-in-out infinite alternate;
 }
 
 .flickr_blue:hover{
-  color: white;
+  color: antiquewhite;
   animation: flicker_blue 2s ease-in-out infinite alternate;
-}
-
-.circle{
-  height: 16px;
-  width: 16px;
-  border-radius: 24px;
-  background-color: white;
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 99999999; /* so that it stays on top of all other elements */
 }
 
 .ornge{
   color: orangered;
-}
-
-.nogo:before{
-  content: "BV";
-  color: white;
-  animation: old-text 0.5s linear forwards;
-}
-
-.logo:before{
-  content: "BHARGAV";
-  color: white;
-  animation: new-text 0.5s linear forwards;
 }
 
 .initial{
@@ -172,17 +210,9 @@ h6{
 .undrln{
   position: absolute;
   height: 2px;
-  margin-top: 1.5em;
-}
-
-.undrln-sm{
+  margin-top: 2em;
+  margin-left: 0.3em;
   width: 26px;
-  background: white;
-  transition: width 0.5s linear;
-}
-
-.undrln-lg{
-  width: 115px;
   background: orangered;
   transition: width 0.5s linear;
 }
@@ -194,7 +224,7 @@ h6{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #121212; /* Optional: Semi-transparent background */
+  background-color: #000; /* Optional: Semi-transparent background */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -213,24 +243,34 @@ h6{
   animation: spin 1s linear infinite;
 }
 
-#app{
+#homepage{
   width: 100vw;
   height: 100vh;
+  background: radial-gradient(rgba(255, 255, 255, 0.2) 8%, transparent 8%);
+  background-position: 0% 0%;
+  background-size: 5vmin 5vmin;
+}
+
+.tanps{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, transparent, black);
+  pointer-events: none;
 }
 
 .aboutme{
-  color: white;
+  color: antiquewhite;
   background: black;
   width: 100vw;
-  height: 100vh;
+  height: max-content;
   overflow: hidden;
+  margin-top: 2em;
 }
 
 .about_me_h1{
   text-align: center;
   padding: 1em;
-  text-decoration: underline;
-  text-decoration-color: orangered;
 }
 
 .about_me_desc{
@@ -245,11 +285,102 @@ h6{
   padding: 3.5em 1em 1em 1em;
 }
 
-.skills_h2{
+.aboutme_cert__h3{
   text-align: center;
   padding: 1em;
-  text-decoration: underline;
-  text-decoration-color: white;
+  margin-top: 1em;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.8), transparent);
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 5px;
+  width: 5px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.mySlides{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mySlides > img{
+  width: 60%;
+  border-radius: 10px;
+  transform: scale(1);
+  transition: transform 250ms linear;
+}
+
+.mySlides > img:hover{
+  transform: scale(1.05);
+  transition: transform 250ms linear;
+}
+
+.skills_h2, .aboutme_certs__h3{
+  text-align: center;
+  padding: 1em;
 }
 
 .picdiv{
@@ -270,8 +401,8 @@ h6{
 #projects{
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(black, #121212);
-  color: white;
+  background: linear-gradient(black, #000);
+  color: antiquewhite;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -287,21 +418,21 @@ h6{
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 0 30px 30px 0;
+  border-radius: 0 15px 15px 0;
   border: 1px solid bisque;
   height: 80%;
   width: 80%;
   margin-left: -2px;
-  background: #121212;
-  box-shadow: inset -20px 20px 120px #080808,
-            inset 20px -20px 120px #0b0b0b;
+  background: #000;
+  box-shadow: inset -20px 20px 120px rgba(240, 240, 240, 0.1),
+            inset 20px -20px 120px rgba(240, 240, 240, 0.1);
 }
 
 #connect{
-  height: 100vh;
+  height: max-content;
   width: 100vw;
-  background-color: #121212;
-  color: white;
+  background-color: #000;
+  color: antiquewhite;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -316,20 +447,73 @@ h6{
   display: none;
 }
 
-.form_div{
+.sm_links{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 30px 0px 0px 30px;
-  border: 1px solid bisque;
-  height: 80%;
-  width: 80%;
-  background: #121212;
-  box-shadow: inset -20px 20px 120px #080808,
-            inset 20px -20px 120px #0b0b0b;
+  flex-direction: column;
 }
 
-.form_div:after, .project_div:after{
+.sm_links h6{
+  text-align: left;
+}
+
+.sm_links a{
+  text-decoration: none;
+  color: bisque;
+}
+
+.sm_links a:hover{
+  text-decoration: underline;
+  text-decoration-color: bisque;
+  color: orangered;
+}
+
+.form_div{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4em;
+  border-radius: 15px 0px 0px 15px;
+  border: 1px solid bisque;
+  height: max-content;
+  width: 80%;
+  background: #000;
+  box-shadow: inset -20px 20px 120px rgba(250, 250, 250, 0.1),
+            inset 20px -20px 120px rgba(250, 250, 250, 0.1);
+}
+
+form{
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  height: 100%;
+  gap: 1em;
+}
+
+input, textarea{
+  font-weight: bolder;
+  color: antiquewhite;
+  padding: 2em;
+  border: 1px solid rgba(255, 228, 196, 0.1);
+  border-radius: 10px;
+  background-color: transparent;
+  resize: none;
+}
+
+form > input[type="button"]{
+  font-weight: 900;
+}
+
+form > input[type="button"]:hover{
+  background: #121212;
+  color: orangered;
+  border: 1px solid bisque;
+}
+
+.project_div:after{
   content: "";
   margin-top: -17px;
   font-size: 3em;
@@ -389,11 +573,42 @@ h6{
 }
 
 footer{
+  font-family: "Lato", sans-serif;
   color: antiquewhite;
   text-align: center;
   padding: 1em;
   padding-top: 4em;
-  background-color: #121212;
+  background-color: #000;
+}
+
+#blob{
+  position: absolute;
+  background: linear-gradient(
+    to right,
+    aquamarine,
+    mediumpurple
+  );
+  animation: rotate 20s infinite;
+  height: 350px;
+  aspect-ratio: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(50%, 50%);
+  border-radius: 50%;
+  z-index: 10000000;
+  filter: blur(75px);
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to{
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes wip{
@@ -496,56 +711,68 @@ footer{
   }
 }
 
-@keyframes new-text {
-  0% {
-    content: "BH";
-  }
-  20% {
-    content: "BHA";
-  }
-  40% {
-    content: "BHAR";
-  }
-  60% {
-    content: "BHARG";
-  }
-  80% {
-    content: "BHARGA";
-  }
-  100% {
-    content: "BHARGAV ";
-  }
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
 
-@keyframes old-text {
-  10% {
-    content: "BHARGAV";
-  }
-  20% {
-    content: "BHARGA";
-  }
-  40% {
-    content: "BHARG";
-  }
-  50% {
-    content: "BHAR";
-  }
-  70% {
-    content: "BHA";
-  }
-  90% {
-    content: "BH";
-  }
-  100% {
-    content: "B";
-  }
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
 }
 
 @media only screen and (max-width: 900px) {
-  .circle{
-    display: none;
+
+  .aboutme_main{
+    padding: 1em;
   }
 
+  .about_me_p{
+    padding: 2em;
+  }
+
+  .aboutme_work{
+    width: 90%;
+    margin-top: 2em;
+  } 
+
+  .aboutme_edu{
+    width: 90%;
+  }
+
+  .aboutme_edu__desc{
+    border-left: none;
+    background: linear-gradient(180deg, rgba(255, 228, 196, 0.2) 0%, #000 100%);
+    border-top: 2px solid rgba(255, 169, 0, 0.2);
+    width: 90%;
+  }
+  
+  .aboutme_work__desc{
+    border-right: none;
+    background: linear-gradient(0deg, rgba(255, 228, 196, 0.2) 0%, #000 100%);
+    border-bottom: 2px solid rgba(255, 169, 0, 0.2);
+    width: 90%;
+  }
+
+  .form_div{
+    padding-bottom: 2em;
+    flex-direction: column-reverse;
+    gap: 1em;
+  }
+
+  form{
+    width: 100%;
+    padding: 1em;
+  }
+
+  .certs__list{
+    text-wrap: wrap;
+    width: 100%;
+  }
+
+  .certs__witharr{
+    gap: 0;
+  }
 }
 
 @media only screen and (max-width: 1300px) {
@@ -565,7 +792,7 @@ footer{
   }
   
   .aboutme{
-    height: 50em;
+    height: max-content;
   }
 
   .about_me_desc{
@@ -645,10 +872,6 @@ footer{
     gap: 1rem;
   }
 
-  .aboutme{
-    height: 65em;
-  }
-
   .about_me_desc{
     flex-wrap: wrap;
     padding: 1em;
@@ -673,5 +896,55 @@ footer{
 
   footer{
     font-size: small;
+  }
+
+  .about_me_p{
+    padding: 2em;
+  }
+
+  .aboutme_work{
+    width: 100%;
+    margin-top: 3em;
+  } 
+
+  .aboutme_edu{
+    width: 100%;
+  }
+
+  .aboutme_main{
+    padding: 0.5em;
+  }
+
+  .aboutme_edu__desc{
+    border-left: none;
+    background: linear-gradient(180deg, rgba(255, 228, 196, 0.1) 0%, #000 100%);
+    border-top: 2px solid rgba(255, 169, 0, 0.2);
+    width: 80%;
+  }
+  
+  .aboutme_work__desc{
+    border-right: none;
+    background: linear-gradient(0deg, rgba(255, 228, 196, 0.1) 0%, #000 100%);
+    border-bottom: 2px solid rgba(255, 169, 0, 0.2);
+    width: 80%;
+  }
+
+  .mySlides > img{
+    width: 80%;
+  }
+}
+
+
+@media (pointer:coarse) {
+  #blob{
+    opacity: 0.25;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    left: unset;
+    top: unset;
+    transform: unset;
+    animation: none;
+    background: linear-gradient(90deg, aquamarine, mediumpurple);
   }
 }
