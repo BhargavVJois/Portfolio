@@ -253,7 +253,7 @@ h6{
 
 .tanps{
   position: absolute;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background: linear-gradient(180deg, transparent, black);
   pointer-events: none;
