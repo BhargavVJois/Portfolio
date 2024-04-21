@@ -2,48 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" href="./src/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bhargav V Portfolio</title>
+    <title>Bhargav V</title>
     <link href="./style.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div id="app">
+    <!--Cursor hover effect-->
+    <div id="blob"></div>
+
+    <!--Main landing section-->
+    <div id="homepage">
+
+      <!--Transaparent layer to give gradient to main landing page design-->
+      <div class="tanps"></div>
+
+      <!--Navigation bar-->
       <nav id="navi">
-        <h3 id="logo" class="nogo" onmouseover="mouseOver()" onmouseout="mouseOut()"><span class="initial">V</span></h3>
-        <div id="underline" class="undrln undrln-sm"></div>
-        <ul>
-          <li><a href="#aboutme">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#connect">Connect</a></li>
+        <h3><a href="#homepage" id="home_a"><span id="home" data-value="BHARGAV">BHARGAV</span><span class="initial"> V</span></a></h3>
+        <div id="underline" class="undrln"></div>
+        <ul id="navitm">
+          <li><a href="#aboutme" class="greatText" data-value="ABOUT" onmouseover="animateText(0)">ABOUT</a></li>
+          <li><a href="#projects" class="greatText" data-value="PROJECTS" onmouseover="animateText(1)">PROJECTS</a></li>
+          <li><a href="#connect" class="greatText" data-value="CONNECT" onmouseover="animateText(2)">CONNECT</a></li>
         </ul>
       </nav>
+
+      <!--Main big font welcome section-->
       <div class="title">
         <div class="main_text">
           <h1><span class="flickr_blue">H</span><span class="flickr_blue">e</span><span class="flickr_blue">l</span><span class="flickr_blue">l</span><span class="flickr_blue">o</span><span class="flickr_blue">,</span></h1>
@@ -52,6 +42,8 @@
             <span class="flickr_blue">V</span></h1>
           <h6 class="main-text"><span class=""><i class="flickr">&#8600; Web Developer</i></span></h6>
         </div>
+
+        <!--Call to action buttons-->
         <div class="cta">
           <a href="./document/imvbhargav_resume.pdf" download="BhargavVResume.pdf" aria-hidden="true" class="hidden_a" id="pdf_file"></a>
           <button class="flickr_blue b1" onclick="downloadPdf()"><img src="./src/downloading.png" width="25" height="25"/> <strong> Resume</strong></button>
@@ -59,12 +51,20 @@
         </div>
       </div>
     </div>
+
+    <!--About me section-->
     <div class="aboutme" id="aboutme">
+
+      <!--About me heading-->
       <h1 class="about_me_h1"><span class="ornge">A</span>bout Me.</h1>
       <div class="about_me_desc">
+
+        <!--My picture section-->
         <div class="picdiv">
           <img class="about_me_img" src="./src/pic.jpg"/>
         </div>
+
+        <!--About me description section-->
         <p class="about_me_p">
           Hello, I'm Bhargav V, Since my age of 16, I have been learning and developing skills in Web Development, After completion of BSc in Computer
           Science from Mangalore University, I have joined Mimsys Technologies Pvt. Ltd. on April 2023 as Junior Software Engineer.
@@ -72,25 +72,89 @@
           world more accessable with ease, I have been learning and working in emerging tools of Web Development.
         </p>
       </div>
-      <h2 class="skills_h2 MagicScroll">S<span class="ornge">kills.</span></h2>
+
+      <div class="aboutme_main">
+        <!--Education section-->
+        <div class="aboutme_edu">
+          <h3 class="aboutme_edu__h3">Education</h3>
+          <div class="aboutme_edu__desc">
+            <h4>Bachelor of Science</h4>
+            <i style="font-size: x-small;">in Computer Science</i>
+            <h4><span class="ornge">&#8600;</span> Mangalore University</h4>
+            <h5>2019 - 2022</h5>
+          </div>
+        </div>
+
+        <!--Work Experience section-->
+        <div class="aboutme_work">
+          <h3 class="aboutme_work__h3">Work Experience</h3>
+          <div class="aboutme_work__desc">
+            <h4>Junior Software Engineer</h4>
+            <h4><span class="ornge">&#8600;</span> Mimsys Technologies Pvt Ltd</h4>
+            <h5>april 2023 - april 2024</h5>
+          </div>
+        </div>
+      </div>
+
+      <!--Certifications section-->
+      <h3 class="aboutme_cert__h3">Certifications</h3>
+      <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img src="./src/rwd.png">
+          <div class="text">Responsive Web Design</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="./src/beta.png">
+          <div class="text">JavaScript Algorithms and Data Structures (Beta)</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="./src/fdl.png">
+          <div class="text">Front End Development Libraries</div>
+        </div>
+
+        <div class="mySlides fade">
+          <img src="./src/jsads.png">
+          <div class="text">Legacy JavaScript Algorithms and Data Structures</div>
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+          <span class="dot" onclick="currentSlide(4)"></span> 
+        </div>
+
+      <!--About me skills section-->
+      <h3 class="skills_h2 MagicScroll">Skills</h3>
       <div class="sk_wrap">
         <div class="scroller" data-direction="left" data-speed="slow">
           <div class="skills scroller_inner" id="skills">
-            <img class="skill_img" src="./src/p5.png" width="60" height="60"/>
-            <img class="skill_img" src="./src/p3.png" width="60" height="60"/>
-            <img class="skill_img" src="./src/p8.png" width="60" height="60"/>
-            <img class="skill_img" src="./src/rect.png" width="60" height="60"/>
-            <img class="skill_img" src="./src/p7.png" width="60" height="60"/>
-            <img class="skill_img" src="./src/next.png" width="60" height="60"/>
-            <img class="skill_img" src="./src/django.png" width="60" height="60"/>
-            <img class="skill_img" src="./src/p9.png" width="60" height="60"/>
-            <img class="skill_img" src="./src/p2.png" width="60" height="60"/>
-            <img class="skill_img" src="./src/p6.png" width="60" height="60"/>
-            <img class="skill_img" src="./src/p1.png" width="60" height="60"/>
+            <img class="skill_img" src="./src/p5.png" width="60" height="60" draggable="false"/>
+            <img class="skill_img" src="./src/p3.png" width="60" height="60" draggable="false"/>
+            <img class="skill_img" src="./src/p8.png" width="60" height="60" draggable="false"/>
+            <img class="skill_img" src="./src/rect.png" width="60" height="60" draggable="false"/>
+            <img class="skill_img" src="./src/p7.png" width="60" height="60" draggable="false"/>
+            <img class="skill_img" src="./src/next.png" width="60" height="60" draggable="false"/>
+            <img class="skill_img" src="./src/djangoproject.svg" width="60" height="60" draggable="false"/>
+            <img class="skill_img" src="./src/p9.png" width="60" height="60" draggable="false"/>
+            <img class="skill_img" src="./src/p2.png" width="60" height="60" draggable="false"/>
+            <img class="skill_img" src="./src/p6.png" width="60" height="60" draggable="false"/>
+            <img class="skill_img" src="./src/p1.png" width="60" height="60" draggable="false"/>
           </div>
         </div>
+      </div>
     </div>
-    </div>
+
+    <!--Projects section-->
     <div id="projects">
       <div class="project_div">
         
@@ -100,147 +164,34 @@
       <h1 class="projects_h1"><span class="ornge">P</span>rojects.</h1>
     </div>
 
+    <!--Connect with me section-->
     <div id="connect">
       <h1 class="connect_h1"><span class="ornge">C</span>onnect <br> with <br> me.</h1>
       <div class="form_div">
         
-        <h2>WORK IN PROGRESS</h2>
+        <div class="sm_links">
+          <h6>Find me on:</h6>
+          <h5><a href="https://www.github.com/imvbhargav" target="_blank">01. github <span class="ornge">&rarr;</span></a><h5>
+          <h5><a href="https://www.linkedin.com/in/imvbhargav" target="_blank">02. linkedin <span class="ornge">&rarr;</span></a></h5>
+        </div>
+        <h3>OR</h3>
+        <form>
+          <p>Send me a message or just send a mail at <strong>hellobhargavv@gmail.com</strong></p>
+          <input type="text" name="name" placeholder="Name" autocomplete="off"/>
+          <input type="text" name="email" placeholder="Email" autocomplete="off"/>
+          <textarea id="msg" name="message" rows="8" cols="50" placeholder="Message" autocomplete="off"></textarea>
+          <input type="button" name="submit" placeholder="Submit" value="Send" onclick="sendMessage()"/>
+        </form>
 
       </div>
     </div>
+
+    <!--Footer section-->
     <footer>
       <h3>&copy; Copyright - 2024, Bhargav V.</h3>
     </footer>
-    <script type="module" src="/main.js"></script>
-    <script>
-      function mouseOver() {
-        document.getElementById("logo").classList.remove("nogo");
-        document.getElementById("logo").classList.add("logo");
 
-        document.getElementById("underline").classList.remove("undrln-sm");
-        document.getElementById("underline").classList.add("undrln-lg");
-      }
-
-      function mouseOut() {
-        document.getElementById("logo").classList.remove("logo");
-        document.getElementById("logo").classList.add("nogo");
-
-        document.getElementById("underline").classList.remove("undrln-lg");
-        document.getElementById("underline").classList.add("undrln-sm");
-      }
-
-      const scrollers = document.querySelectorAll(".scroller");
-
-      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
-        addAnimation();
-      }
-
-      function addAnimation(){
-        scrollers.forEach(scroller => {
-          scroller.setAttribute("data-animated", true)
-
-          const scrollerInner = scroller.querySelector('.scroller_inner')
-          const scrollerContent = Array.from(scrollerInner.children)
-
-          scrollerContent.forEach(item => {
-            const duplicatedItem = item.cloneNode(true);
-
-            duplicatedItem.setAttribute('aria-hidden', true)
-            scrollerInner.appendChild(duplicatedItem)
-          })
-        })
-      }
-
-      function downloadPdf(){
-        document.getElementById("pdf_file").click();
-      }
-
-      const coords = { x: 0, y: 0 };
-      const circles = document.querySelectorAll(".circle");
-      let y = coords.y;
-      let oldX, diffX = 0;
-      let oldY, diffY = 0;
-      
-      const colors = [
-        "#ffb56b",
-        "#fdaf69",
-        "#f89d63",
-        "#f59761",
-        "#ef865e",
-        "#ec805d",
-        "#e36e5c",
-        "#df685c",
-        "#d5585c",
-        "#d1525c",
-        "#c5415d",
-        "#c03b5d",
-        "#b22c5e",
-        "#ac265e",
-        "#9c155f",
-        "#950f5f",
-        "#830060",
-        "#7c0060",
-        "#680060",
-        "#60005f",
-        "#48005f",
-        "#3d005e"
-      ];
-      
-      circles.forEach(function (circle, index) {
-        circle.x = 0;
-        circle.y = 0;
-        circle.style.backgroundColor = colors[index % colors.length];
-      });
-      
-      window.addEventListener("mousemove", function(e){
-        coords.x = e.clientX;
-        coords.y = document.documentElement.scrollTop + e.clientY;
-      
-        y = e.clientY;
-      
-        diffX = Math.abs(oldX - e.clientX);
-        diffY = Math.abs(oldY - coords.y);
-      
-        oldX = e.clientX;
-        oldY = coords.y;
-      });
-      
-      window.addEventListener("scroll", function(e){
-        coords.y = document.documentElement.scrollTop + y;
-      
-        diffY = Math.abs(oldY - coords.y);
-        oldY = coords.y;
-      });
-      
-      function animateCircles() {
-        
-        let x = coords.x;
-        let y = coords.y;
-        
-        circles.forEach(function (circle, index) {
-          circle.style.left = x - 8 + "px";
-          circle.style.top = y - 8 + "px";
-          
-          circle.style.scale = (circles.length - index) / circles.length;
-          
-          circle.x = x;
-          circle.y = y;
-      
-          const nextCircle = circles[index + 1] || circles[0];
-          if (diffX < 40 && diffY < 40){
-            x += (nextCircle.x - x) * 0.25;
-            y += (nextCircle.y - y) * 0.25;
-          }
-          else{
-            x += (nextCircle.x - x) * 0.05;
-            y += (nextCircle.y - y) * 0.05;
-          }
-        });
-       
-        requestAnimationFrame(animateCircles);
-      }
-      
-      animateCircles();
-    </script>
+    <!--Import script for javascript execution-->
+    <script src="/main.js"></script>
   </body>
 </html>
