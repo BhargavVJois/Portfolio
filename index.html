@@ -555,8 +555,10 @@ function sendMail(){
         document.getElementById("submitButton").value = "Sent";
       } else {
         console.error('Error:', data.message);
+        document.getElementById("submitButton").value = "Send";
       }
     } catch (error) {
+      document.getElementById("submitButton").value = "Send";
       alert("Error: Try again or use email provided.");
       console.error('Error sending email:', error);
     } finally{
