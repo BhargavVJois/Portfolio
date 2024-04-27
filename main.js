@@ -1,3 +1,6 @@
+const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+document.getElementById("trs").style.height = document.getElementById("homepage").offsetHeight;
+
 // CODE FOR HANDLING MAIN CURSON GRADIENT MOVE.
 const body = document.body;
 const blob = document.getElementById('blob');
@@ -195,11 +198,6 @@ function animateText(i){
   }, 30);
 }
 
-
-function sendMessage(){
-  alert("Message received!");
-}
-
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -211,6 +209,7 @@ function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 
+// function: showSlides: to show ie move images slides on button clicks.
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
@@ -225,4 +224,144 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "flex";  
   dots[slideIndex-1].className += " active";
+}
+
+// Code to show or hide my photo on mouse over
+// also to maintain the image always stays near pointer.
+const photo = document.getElementById("photo");
+photo.onmouseover = (event) => {
+  const photo_img = document.getElementById("photo__img");
+  photo_img.animate({
+    opacity: 1,
+  }, { duration: 500, fill: 'forwards'})
+  photo_img.style.left = (clientX - 50) + "px";
+  photo_img.style.top = (document.documentElement.scrollTop + clientY - 50) + "px";
+}
+
+photo.onmousemove = (event) => {
+  const photo_img = document.getElementById("photo__img");
+  photo_img.animate({
+    left: (clientX - 50) + "px",
+    top: (document.documentElement.scrollTop + clientY - 50) + "px",
+  }, { duration: 500, fill: 'forwards'})
+}
+
+photo.onmouseout = (event) => {
+  const photo_img = document.getElementById("photo__img");
+  photo_img.animate({
+    opacity: 0,
+  }, { duration: 500, fill: 'forwards'})
+}
+
+// Code to show or hide certificates on mouse over
+// also to maintain the image always stays near pointer.
+const imageSources = ["./src/rwd.png", "./src/beta.png", "./src/fdl.png", "./src/jsads.png"];
+const imgCert = document.querySelectorAll(".cert_img__a");
+imgCert.forEach((item, index) => {
+  item.addEventListener("mouseover", e => {
+    const certImg = document.getElementById("certImg");
+    certImg.style.left = clientX + "px";
+    certImg.style.top = document.documentElement.scrollTop + clientY + "px";
+    certImg.setAttribute("src", imageSources[index]);
+    certImg.animate({
+      opacity: 1,
+    }, {duration: 500, fill: "forwards"})
+  })
+
+  item.addEventListener("mousemove", e => {
+    const certImg = document.getElementById("certImg");
+    certImg.setAttribute("src", imageSources[index]);
+    certImg.animate({
+      left: (clientX) + "px",
+      top: (document.documentElement.scrollTop + clientY) + "px",
+    }, {duration: 500, fill: "forwards"})
+  })
+
+  item.addEventListener("mouseout", e => {
+    const certImg = document.getElementById("certImg");
+    certImg.animate({
+      opacity: 0,
+    }, {duration: 500, fill: "forwards"})
+  })
+})
+
+// Function to show error if form is invalid.
+function showError(id){
+  document.getElementById(id).animate({
+    opacity: 1,
+  }, {duration: 250, fill: "forwards"})
+}
+
+// Function to hide errors shown on form invalid.
+function hideError(id){
+  document.getElementById(id).animate({
+    opacity: 0,
+  }, {duration: 150, fill: "forwards"})
+}
+
+// Function to send mail using the custom server api.
+function sendMail(){
+  const name = document.getElementById('senderName').value;
+  const email = document.getElementById('senderEmail').value;
+  const message = document.getElementById('sendingMsg').value;
+
+  async function sendEmail() {
+
+    // If name is invalid show error.
+    if (!name) {
+      showError("err__name");
+    }
+
+    // If email is invalid show error.
+    if (!email || !emailRegex.test(email)) {
+      showError("err__email");
+    }
+
+    // If message is invalid show error.
+    if (!message) {
+      showError("err__msg");
+    }
+
+    // return and reset form to stop further execution and avoid server errors.
+    if (!name || !email || !emailRegex.test(email) || !message){
+      document.getElementById("contact__form").reset();
+      return;
+    }
+    try {
+      document.getElementById("submitButton").value = "Sending...";
+      const response = await fetch('http://localhost:3000/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.message === 'Email sent successfully!') {
+        alert("Message Sent Succesfully!");
+        console.log('Email sent!');
+        document.getElementById("submitButton").disabled = true;
+        document.getElementById("submitButton").value = "Sent";
+      } else {
+        console.error('Error:', data.message);
+      }
+    } catch (error) {
+      alert("Error: Try again or use email provided.");
+      console.error('Error sending email:', error);
+    } finally{
+      document.getElementById("contact__form").reset()
+      hideError("err__name");
+      hideError("err__email");
+      hideError("err__msg");
+    }
+  }
+
+  // Send data to server to send mail.
+  sendEmail();
 }
