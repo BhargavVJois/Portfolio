@@ -329,7 +329,7 @@ function sendMail(){
     }
     try {
       document.getElementById("submitButton").value = "Sending...";
-      const response = await fetch('http://localhost:3000/send-email', {
+      const response = await fetch('https://mailserver-k0i2.onrender.com/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
