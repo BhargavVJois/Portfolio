@@ -486,6 +486,7 @@ h6{
 
 .project_div{
   display: flex;
+  overflow: hidden;
   justify-content: center;
   align-items: center;
   border-radius: 0 15px 15px 0;
@@ -597,7 +598,6 @@ form > input[type="submit"]:disabled{
   content: "";
   margin-top: -17px;
   font-size: 3em;
-  animation: wip 4s linear infinite;
 }
 
 .sk_wrap{
@@ -681,6 +681,75 @@ footer{
   pointer-events: none;
 }
 
+.proj__row{
+  padding: 1em;
+}
+
+.proj__row > h4{
+  padding: 0.5em;
+}
+
+.width__260{
+  width: 260px;
+}
+
+strong{
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.proj__header{
+  color: bisque;
+  text-decoration: underline;
+}
+
+.proj__row > h4 > a{
+  color: white;
+  text-decoration: none;
+}
+.proj__row > h4 > a:hover{
+  color: orangered;
+  text-decoration: none;
+}
+
+.flex__div{
+  display: flex;
+  justify-content: space-around;
+  gap: 1em;
+}
+
+.django, .html, .css, .js, .react{
+  padding: 5px;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+.django{
+  background: linear-gradient(90deg, rgba(1, 131, 14, 0.2), rgba(0, 0, 0, 0));
+}
+
+.html{
+  background: linear-gradient(90deg, rgba(206, 48, 0, 0.2), rgba(0, 0, 0, 0));
+}
+
+.css{
+  background: linear-gradient(90deg, rgba(0, 206, 199, 0.2), rgba(0, 0, 0, 0));
+}
+
+.js{
+  background: linear-gradient(90deg, rgba(185, 206, 0, 0.2), rgba(0, 0, 0, 0));
+}
+
+.react{
+  background: linear-gradient(90deg, rgba(0, 31, 206, 0.2), rgba(0, 0, 0, 0));
+}
+
+footer > h5{
+  color: orangered;
+  opacity: 0.1;
+  text-decoration: overline;
+}
+
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -688,52 +757,6 @@ footer{
 
   to{
     transform: rotate(360deg);
-  }
-}
-
-@keyframes wip{
-  0%{
-    content: "";
-  }
-
-  10%{
-    content: ".";
-  }
-
-  20%{
-    content: "..";
-  }
-
-  30%{
-    content: "...";
-  }
-
-  40%{
-    content: "....";
-  }
-
-  50%{
-    content: ".....";
-  }
-
-  60%{
-    content: "....";
-  }
-
-  70%{
-    content: "...";
-  }
-
-  80%{
-    content: "..";
-  }
-
-  90%{
-    content: ".";
-  }
-
-  100%{
-    content: "";
   }
 }
 
@@ -863,6 +886,10 @@ footer{
 
   .about_me__text{
     padding: 0;
+  }
+
+  .tech__used{
+    display: none;
   }
 }
 
@@ -1033,6 +1060,14 @@ footer{
 
   .mySlides > img{
     width: 80%;
+  }
+
+  .live__link{
+    display: none;
+  }
+
+  .width__260 > h4{
+    font-size: smaller;
   }
 }
 
