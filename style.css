@@ -430,6 +430,12 @@ h6{
   border-radius: 10px;
   border: 1px solid bisque;
   z-index: 100000;
+  pointer-events: none;
+}
+
+.not_for_mbl > a{
+  color: bisque;
+  text-decoration: none;
 }
 
 .mySlides > img:hover{
